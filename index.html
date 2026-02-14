@@ -5,61 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIYUMIYU NEWS</title>
     <link rel="stylesheet" href="style.css">
-    </head>
+</head>
 <body>
 
     <header>
-        <div class="header-top">
-            <div class="header-icon">☰</div> <h1>MIYUMIYU NEWS</h1>
-            <div class="header-icon">🔍</div> </div>
-        
         <div class="lang-selector">
-            <button class="active">JP</button>
-            <button>EN</button>
-            <button>KR</button>
+            <button onclick="switchLang('ja')" id="btn-ja" class="active">JP</button>
+            <button onclick="switchLang('en')" id="btn-en">EN</button>
+            <button onclick="switchLang('kr')" id="btn-kr">KR</button>
+        </div>
+
+        <div class="header-top">
+            <div class="header-icon menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <h1 id="site-title">MIYUMIYU NEWS</h1>
+            
+            <div class="header-icon search-button">
+                <span class="search-symbol">Q</span>
+                <span class="search-label">SEARCH</span>
+            </div>
         </div>
     </header>
 
     <main>
         <section class="new-release">
             <div class="main-visual">
-                <img src="matometomatome.jpg" alt="メインビジュアル">
+                <img src="matometomatome.png" alt="Main Visual">
             </div>
             
             <div class="content">
-                <span class="badge badge-argon">NEW RELEASE</span>
-                <h2>「まとめ (Ar ver.)」リリース。ネオンサインシリーズ第一弾はチップチューン・アレンジ</h2>
-                <p class="description">
-                    シンガーソングライター・MIYUMIYUが贈るセルフアレンジ企画。アルゴンの輝きを音に閉じ込めた一曲。
+                <span class="badge badge-argon" data-ja="NEW RELEASE" data-en="NEW RELEASE" data-kr="신규 출시">NEW RELEASE</span>
+                
+                <h2 class="trans-text" 
+                    data-ja="「まとめ (Ar ver.)」リリース。ネオンサインシリーズ第一弾はチップチューン・アレンジ" 
+                    data-en="'Matome (Ar ver.)' Released. The first Neon Sign Series with Chiptune arrangement." 
+                    data-kr="'Matome (Ar ver.)' 발매. 네온사인 시리즈 제1탄 칩튠 어레인지.">
+                    「まとめ (Ar ver.)」リリース。ネオンサインシリーズ第一弾はチップチューン・アレンジ
+                </h2>
+
+                <p class="description trans-text" 
+                   data-ja="シンガーソングライター・MIYUMIYUが贈るセルフアレンジ企画。アルゴンの輝きを音に閉じ込めた一曲。" 
+                   data-en="A self-arrangement project by singer-songwriter MIYUMIYU. A song that captures the glow of Argon." 
+                   data-kr="싱어송라이터 MIYUMIYU가 선사하는 셀프 어레인지 프로젝트. 아르곤의 광채를 소리에 담아낸 곡.">
+                   シンガーソングライター・MIYUMIYUが贈るセルフアレンジ企画。アルゴンの輝きを音に閉じ込めた一曲。
                 </p>
-                <a href="#" class="btn-readmore">続きを聴く (TuneCore)</a>
+
+                <a href="#" class="btn-readmore trans-text" data-ja="続きを読む" data-en="Read More" data-kr="더 읽기">続きを読む</a>
             </div>
         </section>
 
         <section class="list-section">
-            <h2 class="section-title">DISCOGRAPHY</h2>
+            <h2 class="section-title" data-ja="DISCOGRAPHY" data-en="DISCOGRAPHY" data-kr="디스코그래피">DISCOGRAPHY</h2>
             
             <div class="list-item">
-                <div class="square-thumb">?</div>
+                <div class="square-thumb">
+                    <img src="discography_a.png" alt="Song A" onerror="this.style.display='none'">
+                    <span>?</span>
+                </div>
                 <div class="item-info">
                     <h3>楽曲名 A</h3>
                     <p>2025.12.24 Release</p>
                 </div>
             </div>
-
-            <div class="list-item">
-                <div class="square-thumb">?</div>
-                <div class="item-info">
-                    <h3>楽曲名 B</h3>
-                    <p>2025.11.01 Release</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="list-section">
-            <h2 class="section-title">ABOUT</h2>
         </section>
     </main>
 
+    <script>
+        function switchLang(lang) {
+            const elements = document.querySelectorAll('.trans-text, .badge, .section-title, .btn-readmore');
+            elements.forEach(el => {
+                const text = el.getAttribute(`data-${lang}`);
+                if (text) el.textContent = text;
+            });
+
+            document.querySelectorAll('.lang-selector button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-${lang}`).classList.add('active');
+        }
+    </script>
 </body>
 </html>
