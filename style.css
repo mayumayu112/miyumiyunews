@@ -1,0 +1,120 @@
+/* 全体設定 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+    color: #333;
+    background-color: #fff;
+    line-height: 1.6;
+}
+
+/* ヘッダー */
+header {
+    text-align: center;
+    padding: 20px 0;
+    border-bottom: 4px solid #d32f2f; /* 赤いアクセントライン */
+}
+
+header h1 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    margin: 0;
+}
+
+/* メインコンテンツ */
+main {
+    max-width: 600px; /* モバイルサイズを想定 */
+    margin: 0 auto;
+}
+
+/* プレースホルダー（画像がない部分） */
+.thumbnail-placeholder {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: #757575;
+}
+
+/* コンテンツ内部 */
+.content {
+    padding: 20px;
+}
+
+.badge {
+    background-color: #d32f2f;
+    color: #fff;
+    font-size: 0.7rem;
+    padding: 2px 8px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 1.4rem;
+    margin: 0 0 15px 0;
+    line-height: 1.3;
+}
+
+.description {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 25px;
+}
+
+/* ボタン */
+.btn-tunecore {
+    display: block;
+    background-color: #222;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+/* 各セクションのタイトル */
+.section-title {
+    font-size: 1.1rem;
+    border-left: 5px solid #d32f2f;
+    padding-left: 15px;
+    margin: 40px 20px 20px 20px;
+    letter-spacing: 1px;
+}
+
+/* リストアイテム (Discography) */
+.list-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.square-thumb {
+    width: 80px;
+    height: 80px;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ddd;
+    margin-right: 15px;
+    color: #1a73e8;
+}
+
+.item-info h3 {
+    margin: 0;
+    font-size: 1rem;
+}
+
+.item-info p {
+    margin: 5px 0 0 0;
+    font-size: 0.8rem;
+    color: #888;
+}
