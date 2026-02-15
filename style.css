@@ -104,12 +104,12 @@ header h1 {
 }
 
 .news-title {
-    font-size: 1.12rem; /* 1行目の「配信スタート」までを1行に収めるためのサイズ */
-    line-height: 1.5;   /* 2行のまとまりを良くするための行間調整 */
+    font-size: 1.45rem; /* 本文の端まで届くよう大きく調整 */
+    line-height: 1.4;
     margin: 0 0 25px 0;
     font-weight: 900;
-    letter-spacing: -0.04em; /* 文字間を詰めて横幅を節約 */
-    word-break: normal;      /* <br>での改行を優先 */
+    letter-spacing: -0.05em; /* 文字間をしっかり詰めて1行の収容力を最大化 */
+    word-break: break-all;   /* 画面幅が極端に狭い場合でもはみ出しを防止 */
 }
 
 @media (min-width: 768px) {
