@@ -1,18 +1,213 @@
-/* 前略：既存のスタイルは維持 */
+/* 1. フォント・共通 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
 
-/* 記事タイトルのデザイン調整 */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #222;
+    background-color: #fff;
+    line-height: 1.8;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 2. ヘッダー */
+header {
+    background: #fff;
+    border-bottom: 0.5px solid #000000;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    text-align: center;
+}
+
+.lang-selector {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 8px;
+}
+
+.v-line {
+    width: 0.5px;
+    height: 12px;
+    background-color: #ccc;
+}
+
+.lang-selector button {
+    background: none;
+    border: none;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #999;
+    font-weight: bold;
+}
+
+.lang-selector button.active {
+    color: #000;
+}
+
+header h1 {
+    font-size: 2.0rem;
+    letter-spacing: 2px;
+    margin: 0;
+    line-height: 1.4;
+    font-weight: 900;
+}
+
+/* 3. ニュースコンテンツ */
+.new-release {
+    margin-top: -5px;
+    margin-bottom: 50px;
+}
+
+.main-visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.content {
+    padding: 25px 20px;
+}
+
+.meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+
+.badge-argon {
+    background-color: #00f2ff;
+    color: #000;
+    padding: 2px 10px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    display: inline-block;
+}
+
+.release-date {
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+/* 記事タイトル調整 */
 .news-title {
-    font-size: 1.6rem;
-    line-height: 1.5; /* 行間を少し広げて読みやすく */
+    font-size: 1.5rem;
+    line-height: 1.5;
     margin: 0 0 25px 0;
     font-weight: 900;
-    letter-spacing: 0.5px;
+    letter-spacing: -0.2px;
 }
 
 @media (min-width: 768px) {
     .news-title {
-        font-size: 2.2rem; /* PCではさらにダイナミックに */
+        font-size: 2.2rem;
+        letter-spacing: 0.5px;
     }
 }
 
-/* 後略：他のスタイルは変更なし */
+.description p {
+    font-size: 1rem;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+.description a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    margin: 30px 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* 4. ディスコグラフィー */
+.section-title {
+    font-size: 1.1rem;
+    border-left: 5px solid #00f2ff; /* ネオンカラー */
+    padding-left: 15px;
+    margin: 40px 20px 25px;
+    font-weight: bold;
+}
+
+.list-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.jacket-link {
+    text-decoration: none;
+}
+
+.square-thumb {
+    width: 80px;
+    height: 80px;
+    background: #f4f4f4;
+    margin-right: 15px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.play-overlay {
+    position: absolute;
+    color: #fff;
+    font-size: 1.5rem;
+    background: rgba(0, 0, 0, 0.4);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    padding-left: 3px;
+    transition: background 0.3s;
+}
+
+.jacket-link:hover .play-overlay {
+    background: rgba(0, 242, 255, 0.7);
+}
+
+.item-info h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: #222;
+}
