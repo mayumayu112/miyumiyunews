@@ -2,6 +2,14 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FTNPZ5R535"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-FTNPZ5R535');
+    </script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MIYUMIYU NEWS</title>
     <link rel="stylesheet" href="style.css">
@@ -9,82 +17,153 @@
 <body>
 
     <header>
-        <div class="lang-selector">
-            <button onclick="switchLang('ja')" id="btn-ja" class="active">JP</button>
-            <button onclick="switchLang('en')" id="btn-en">EN</button>
-            <button onclick="switchLang('kr')" id="btn-kr">KR</button>
-        </div>
-
-        <div class="header-top">
-            <div class="header-icon menu-icon">
-                <span></span>
-                <span></span>
-                <span></span>
+        <div class="header-container">
+            <div class="lang-selector">
+                <button onclick="switchLang('ja')" id="btn-ja" class="active">JP</button>
+                <div class="v-line"></div>
+                <button onclick="switchLang('en')" id="btn-en">EN</button>
+                <div class="v-line"></div>
+                <button onclick="switchLang('kr')" id="btn-kr">KR</button>
             </div>
-            
             <h1 id="site-title">MIYUMIYU NEWS</h1>
-            
-            <div class="header-icon search-button">
-                <span class="search-symbol">Q</span>
-                <span class="search-label">SEARCH</span>
-            </div>
         </div>
     </header>
 
-    <main>
-        <section class="new-release">
+    <main class="container">
+        <article class="new-release">
             <div class="main-visual">
                 <img src="matometomatome.png" alt="Main Visual">
             </div>
             
             <div class="content">
-                <span class="badge badge-argon" data-ja="NEW RELEASE" data-en="NEW RELEASE" data-kr="신규 출시">NEW RELEASE</span>
+                <div class="meta">
+                    <span class="badge badge-argon">NEW RELEASE</span>
+                    <span class="release-date">2026.02.15</span>
+                </div>
                 
-                <h2 class="trans-text" 
-                    data-ja="「まとめ (Ar ver.)」リリース。ネオンサインシリーズ第一弾はチップチューン・アレンジ" 
-                    data-en="'Matome (Ar ver.)' Released. The first Neon Sign Series with Chiptune arrangement." 
-                    data-kr="'Matome (Ar ver.)' 발매. 네온사인 시리즈 제1탄 칩튠 어레인지.">
-                    「まとめ (Ar ver.)」リリース。ネオンサインシリーズ第一弾はチップチューン・アレンジ
-                </h2>
+　　<h2 id="main-title" class="trans-text news-title sm-break" 
+    data-ja="MIYUMIYU、「まとめ - Ar ver.」配信スタート<br>〈ネオンサインシリーズ〉第一弾">
+    MIYUMIYU「まとめ - Ar ver.」配信スタート！〈ネオンサインシリーズ〉第一弾
+</h2>
 
-                <p class="description trans-text" 
-                   data-ja="シンガーソングライター・MIYUMIYUが贈るセルフアレンジ企画。アルゴンの輝きを音に閉じ込めた一曲。" 
-                   data-en="A self-arrangement project by singer-songwriter MIYUMIYU. A song that captures the glow of Argon." 
-                   data-kr="싱어송라이터 MIYUMIYU가 선사하는 셀프 어레인지 프로젝트. 아르곤의 광채를 소리에 담아낸 곡.">
-                   シンガーソングライター・MIYUMIYUが贈るセルフアレンジ企画。アルゴンの輝きを音に閉じ込めた一曲。
-                </p>
+                <div id="main-description" class="description">
+                    <p>MIYUMIYU が、1stシングル「まとめ」のセルフアレンジ企画〈ネオンサインシリーズ〉をスタート。第一弾「まとめ - Ar ver.」を配信リリースした。</p>
 
-                <a href="#" class="btn-readmore trans-text" data-ja="続きを読む" data-en="Read More" data-kr="더 읽기">続きを読む</a>
+                    <p>〈ネオンサインシリーズ〉は、2024年2月にリリースされた1stシングル「まとめ」をMIYUMIYUが自ら編曲する企画。ネオン管に使用される貴ガス（He / Ne / Ar / Kr / Xe）の光をテーマに、楽曲をさまざまなアレンジへと展開していく。歌詞に登場する“ネオン”を着想源としたプロジェクトだ。</p>
+
+                    <div class="video-container">
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/QZkV3Tyo0II" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                    </div>
+
+                    <p>原曲「まとめ」は、ピアノとボーカルのみで構成されたシンプルな弾き語り楽曲。作詞・作曲・MV制作を本人が手がけた原点的な一曲。今回は、編曲・ミックス・マスタリングまでも本人が担当している。</p>
+
+                    <p>第一弾「まとめ - Ar ver.」は、ピアノボーカルサウンドから一転、デジタルな音像へと再構築。どこか懐かしく、遊び心あふれる作品に仕上がっている。また、ジャケットビジュアルも新たに制作。前作のビジュアルをピクセルアート化し、音を視覚面からも表現している。</p>
+
+                    <p>原曲制作時から“ネオン”をモチーフとして生まれた「まとめ」。本プロジェクトは、そのテーマをさらに深化させる試みといえる。YouTubeでは同曲のミュージックビデオも公開中。配信リンクをまとめた特設サイトはこちら。<br>
+                    ➡︎ <a href="https://link.miyutakeuchi.com/matome/ar" target="_blank">link.miyutakeuchi.com/matome/ar</a></p>
+
+                    
+                    <p>シリーズの今後の展開にも注目だ。</p>
+                </div>
             </div>
-        </section>
+        </article>
 
         <section class="list-section">
             <h2 class="section-title" data-ja="DISCOGRAPHY" data-en="DISCOGRAPHY" data-kr="디스코그래피">DISCOGRAPHY</h2>
             
             <div class="list-item">
-                <div class="square-thumb">
-                    <img src="discography_a.png" alt="Song A" onerror="this.style.display='none'">
-                    <span>?</span>
-                </div>
+                <a href="https://link.miyutakeuchi.com/matome/ar/" target="_blank" class="jacket-link">
+                    <div class="square-thumb">
+                        <img src="matomeAr_jacket.jpg" alt="まとめ - Ar ver.">
+                        <div class="play-overlay">▶</div>
+                    </div>
+                </a>
                 <div class="item-info">
-                    <h3>楽曲名 A</h3>
-                    <p>2025.12.24 Release</p>
+                    <h3>まとめ - Ar ver.</h3>
+                </div>
+            </div>
+
+            <div class="list-item">
+                <a href="https://linkco.re/P1F77eSg?lang=ja" target="_blank" class="jacket-link">
+                    <div class="square-thumb">
+                        <img src="matome_jacket.JPG" alt="まとめ">
+                        <div class="play-overlay">▶</div>
+                    </div>
+                </a>
+                <div class="item-info">
+                    <h3>まとめ</h3>
                 </div>
             </div>
         </section>
     </main>
 
-    <script>
-        function switchLang(lang) {
-            const elements = document.querySelectorAll('.trans-text, .badge, .section-title, .btn-readmore');
-            elements.forEach(el => {
-                const text = el.getAttribute(`data-${lang}`);
-                if (text) el.textContent = text;
-            });
+<script>
+    const translations = {
+        en: {
+            title: "MIYUMIYU Launches “Neon Sign Series” with Digital Rework",
+            subtitle: "Memoir (回顧録) – Ar ver. Now Streaming Worldwide",
+            desc: `
+                <p>Japanese singer-songwriter and producer MIYUMIYU has officially launched her new self-produced arrangement project, the <strong>Neon Sign Series</strong>, beginning with the release of “Memoir (回顧録) – Ar ver.”, a reimagined version of her debut single.</p>
+                <p>Originally released in February 2024, Memoir (回顧録) began as a minimalist piano-and-vocal piece—an intimate ballad that marked a defining moment in MIYUMIYU’s solo artistic identity. Written, composed, and visually directed by the artist herself, the song introduced listeners to her stripped-down and emotionally transparent sound.</p>
+                <p>The newly announced Neon Sign Series takes that foundational work and reconstructs it through multiple sonic interpretations inspired by noble gases used in neon lighting — Neon (Ne), Argon (Ar), Helium (He), Krypton (Kr), and Xenon (Xe). The “neon” motif, which appears in the original lyrics, now becomes the conceptual backbone of an evolving musical universe.</p>
 
-            document.querySelectorAll('.lang-selector button').forEach(btn => btn.classList.remove('active'));
-            document.getElementById(`btn-${lang}`).classList.add('active');
+                <h3 style="font-size: 1.2rem; margin-top: 30px; font-weight: 900; border-left: none; padding-left: 0;">From Acoustic Intimacy to Digital Glow</h3>
+                <p>While the original version of Memoir (回顧録) centered on raw piano expression, “Memoir (回顧録) – Ar ver.” shifts dramatically toward a digital soundscape. The arrangement embraces electronic textures and playful tonal design, creating a sound that feels both nostalgic and futuristically vibrant.</p>
+                <p>In a rare move for an independent artist, MIYUMIYU personally handled not only the songwriting and performance but also the arrangement, mixing, and mastering, further solidifying her reputation as a self-contained creative force.</p>
+                <p>The visual direction reflects this shift as well. The artwork for Ar ver. reinterprets the previous cover into pixel art form — a deliberate aesthetic choice that mirrors the track’s digital reconstruction.</p>
+                
+                <h3 style="font-size: 1.2rem; margin-top: 30px; font-weight: 900; border-left: none; padding-left: 0;">A Thematic Expansion</h3>
+                <p>What began as a simple piano confession has now evolved into a multi-dimensional artistic experiment. If the original Memoir (回顧録) was the emotional core, the Neon Sign Series represents its illumination — refracted through different lights, colors, and textures.</p>
+                <p>The official music video for Memoir (回顧録) – Ar ver. is now available on YouTube.</p>
+                <p>Streaming links and related content can be found via the project’s dedicated page:<br>
+                ➡︎ <a href="https://link.miyutakeuchi.com/matome/ar" target="_blank">link.miyutakeuchi.com/matome/ar</a></p>
+                <p>With additional versions planned, the Neon Sign Series is poised to expand MIYUMIYU’s sonic identity even further — positioning her as one of Japan’s most fully self-produced emerging creatives to watch in the international pop landscape.</p>
+            `
+        },
+        kr: {
+            title: "MIYUMIYU, ‘네온사인 시리즈’ 첫 시작",
+            subtitle: "「회고록 (回顧錄) - Ar ver.」 음원 공개",
+            desc: `
+                <p>아티스트 MIYUMIYU가 1집 싱글 「회고록 (回顧錄)」을 새롭게 재해석하는 셀프 어레인지 프로젝트 ‘네온사인 시리즈’를 시작했다. 그 첫 번째 트랙인 「회고록 (回顧錄) - Ar ver.」가 정식 발매되며 프로젝트의 포문을 열었다.</p>
+                <p>‘네온사인 시리즈’는 2024년 2월 발표된 「회고록 (回顧錄)」을 다양한 형태로 재구성하는 프로젝트다. 네온관에 사용되는 희귀가스(Ne / Ar / He / Kr / Xe)가 발산하는 빛을 콘셉트로, 한 곡을 서로 다른 사운드와 분위기로 확장해 나간다. 가사에 반복적으로 등장하는 ‘네온’이라는 이미지에서 출발한 기획이다.</p>
+                <p>원곡 「회고록 (回顧錄)」은 피아노와 보컬만으로 완성된 미니멀한 구성의 자작곡으로, 작사와 작곡은 물론 뮤직비디오 제작까지 MIYUMIYU가 직접 참여한 출발점 같은 작품이다. 이번 시리즈에서는 편곡, 믹싱, 마스터링까지 모두 스스로 맡으며 한층 확장된 프로듀싱 역량을 보여주고 있다.</p>
+                <p>첫 번째 버전인 「회고록 (回顧錄) - Ar ver.」은 기존의 피아노 중심 사운드에서 벗어나 디지털 텍스처가 강조된 사운드로 재탄생했다. 어딘가 레트로한 감성과 동시에 유희적인 분위기를 담아내며 또 다른 결의 ‘회고록’을 완성했다.</p>
+                <p>새롭게 공개된 재킷 이미지 역시 주목할 만하다. 전작의 비주얼을 픽셀 아트 스타일로 재해석해, 이번 버전의 디지털적 사운드 방향성을 시각적으로도 구현했다. ‘네온’을 모티프로 탄생한 「회고록 (回顧錄)」은 이번 프로젝트를 통해 그 세계관을 더욱 깊이 있게 확장해 나가고 있다.</p>
+                <p>해당 곡의 뮤직비디오는 현재 유튜브에서 확인할 수 있으며, 스트리밍 링크를 정리한 공식 페이지는 아래에서 확인 가능하다.<br>
+                ▶ <a href="https://link.miyutakeuchi.com/matome/ar" target="_blank">link.miyutakeuchi.com/matome/ar</a></p>
+                <p>‘네온사인 시리즈’가 앞으로 어떤 빛으로 이어질지, 관심이 집중되고 있다.</p>
+            `
         }
-    </script>
+    };
+
+    function switchLang(lang) {
+        const titleEl = document.getElementById('main-title');
+        const descEl = document.getElementById('main-description');
+
+        // 日本語に戻す
+        if (lang === 'ja') {
+            location.reload(); 
+            return;
+        }
+
+        // 英語(EN)または韓国語(KR)の場合：タイトル・サブタイトル・本文を適用
+        if (translations[lang]) {
+            if (translations[lang].title && translations[lang].subtitle) {
+                titleEl.innerHTML = `${translations[lang].title}<br><span style="font-size: 1.1rem; font-weight: 400; display: block; margin-top: 10px; color: #666;">${translations[lang].subtitle}</span>`;
+            }
+            descEl.innerHTML = translations[lang].desc;
+        }
+
+        // ディスコグラフィーなどの共通部分の切り替え
+        const elements = document.querySelectorAll('.trans-text, .badge, .section-title');
+        elements.forEach(el => {
+            const text = el.getAttribute(`data-${lang}`);
+            if (text) el.innerHTML = text;
+        });
+
+        document.querySelectorAll('.lang-selector button').forEach(btn => btn.classList.remove('active'));
+        document.getElementById(`btn-${lang}`).classList.add('active');
+    }
+</script>
 </body>
 </html>
