@@ -40,7 +40,7 @@
                     MIYUMIYU、〈ネオンサインシリーズ〉第一弾「まとめ - Ar ver.」配信スタート
                 </h2>
 
-                <div class="description trans-text">
+                <div id="main-description" class="description">
                     <p>MIYUMIYU が、1stシングル「まとめ」のセルフアレンジ企画〈ネオンサインシリーズ〉をスタート。第一弾「まとめ - Ar ver.」を配信リリースした。</p>
 
                     <p>〈ネオンサインシリーズ〉は、2024年2月にリリースされた1stシングル「まとめ」をMIYUMIYU自ら編曲する企画。ネオン管に使用される貴ガス（Ne / Ar / He / Kr / Xe）の光をテーマに、楽曲をさまざまなアレンジへと展開していく。歌詞に登場する“ネオン”を着想源としたプロジェクトだ。</p>
@@ -77,9 +77,9 @@
             </div>
 
             <div class="list-item">
-                <a href="https://link.miyutakeuchi.com/matome/ar" target="_blank" class="jacket-link">
+                <a href="https://linkco.re/rZbdVytZ?lang=ja" target="_blank" class="jacket-link">
                     <div class="square-thumb">
-                        <img src="matomeAr_jacket.jpg" alt="まとめ">
+                        <img src="matome_jacket.jpg" alt="まとめ" onerror="this.src='matomeAr_jacket.jpg'">
                         <div class="play-overlay">▶</div>
                     </div>
                 </a>
@@ -91,12 +91,31 @@
     </main>
 
     <script>
+        const translations = {
+            en: {
+                desc: "<p>MIYUMIYU has launched 'Neon Sign Series,' a project reimagining her 1st single 'Matome.' The first installment, 'Matome - Ar ver.,' is now streaming.</p><p>This series explores different arrangements themed around the glow of noble gases (Ne, Ar, He, Kr, Xe). The concept originates from the 'Neon' mentioned in the lyrics.</p><p>Original 'Matome' is a simple piano ballad. This time, MIYUMIYU handled everything including arrangement, mixing, and mastering.</p><p>'Ar ver.' transforms the original sound into a digital, playful soundscape. The artwork is also reimagined as pixel art.</p><p>Check out the music video on YouTube and visit the special site for streaming links:<br>🔗 <a href='https://link.miyutakeuchi.com/matome/ar' target='_blank'>link.miyutakeuchi.com/matome/ar</a></p>"
+            },
+            kr: {
+                desc: "<p>MIYUMIYU가 첫 번째 싱글 'Matome'를 재구성하는 셀프 어레인지 프로젝트 〈네온사인 시리즈〉를 시작했습니다. 그 첫 번째 탄인 'Matome - Ar ver.'가 공개되었습니다.</p><p>비활성 기체(Ne, Ar, He, Kr, Xe)의 빛을 테마로 원곡을 다양하게 편곡하는 프로젝트입니다. 가사에 등장하는 '네온'에서 영감을 얻었습니다.</p><p>원곡은 피아노와 보컬의 심플한 구성이었으나, 이번 'Ar ver.'는 디지털하고 장난기 넘치는 사운드로 재탄생했습니다.</p><p>유튜브에서 뮤직비디오를 확인하고 특설 사이트에서 음원 링크를 만나보세요:<br>🔗 <a href='https://link.miyutakeuchi.com/matome/ar' target='_blank'>link.miyutakeuchi.com/matome/ar</a></p>"
+            }
+        };
+
         function switchLang(lang) {
+            // タイトルなどの短いテキストの切り替え
             const elements = document.querySelectorAll('.trans-text, .badge, .section-title');
             elements.forEach(el => {
                 const text = el.getAttribute(`data-${lang}`);
                 if (text) el.textContent = text;
             });
+
+            // 本文（HTML構造を含む）の切り替え
+            const descEl = document.getElementById('main-description');
+            if (lang === 'ja') {
+                location.reload(); // 日本語は元の構造が複雑なためリロードが確実
+            } else if (translations[lang]) {
+                descEl.innerHTML = translations[lang].desc;
+            }
+
             document.querySelectorAll('.lang-selector button').forEach(btn => btn.classList.remove('active'));
             document.getElementById(`btn-${lang}`).classList.add('active');
         }
