@@ -9,51 +9,56 @@
 <body>
 
     <header>
-        <div class="lang-selector">
-            <button onclick="switchLang('ja')" id="btn-ja" class="active">JP</button>
-            <button onclick="switchLang('en')" id="btn-en">EN</button>
-            <button onclick="switchLang('kr')" id="btn-kr">KR</button>
-        </div>
-
-        <div class="header-top">
-            <div class="header-icon menu-icon">
-                <span></span><span></span><span></span>
+        <div class="header-container">
+            <div class="lang-selector">
+                <button onclick="switchLang('ja')" id="btn-ja" class="active">JP</button>
+                <button onclick="switchLang('en')" id="btn-en">EN</button>
+                <button onclick="switchLang('kr')" id="btn-kr">KR</button>
             </div>
-            <h1>MIYUMIYU NEWS</h1>
-            <div class="header-icon search-button">
-                <span class="search-symbol">Q</span>
-                <span class="search-label">SEARCH</span>
+
+            <div class="header-top">
+                <div class="header-icon menu-icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+                
+                <h1 id="site-title">MIYUMIYU NEWS</h1>
+                
+                <div class="header-icon search-button">
+                    <span class="search-symbol">Q</span>
+                    <span class="search-label">SEARCH</span>
+                </div>
             </div>
         </div>
     </header>
 
-    <main>
-        <article class="news-item">
+    <main class="container">
+        <article class="new-release">
             <div class="main-visual">
-                <img src="matometomatome.png" alt="MIYUMIYU Neon Sign Series">
+                <img src="matometomatome.png" alt="Main Visual">
             </div>
             
             <div class="content">
-                <div class="meta-info">
-                    <span class="badge badge-argon">NEW RELEASE</span>
-                    <span class="date">2026.02.14</span>
+                <div class="meta">
+                    <span class="badge badge-argon" data-ja="NEW RELEASE" data-en="NEW RELEASE" data-kr="신규 출시">NEW RELEASE</span>
                 </div>
                 
                 <h2 class="trans-text" 
                     data-ja="「まとめ (Ar ver.)」リリース。ネオンサインシリーズ第一弾はチップチューン・アレンジ" 
-                    data-en="'Matome (Ar ver.)' Released. Chiptune arrangement for Neon Sign Series Vol.1." 
+                    data-en="'Matome (Ar ver.)' Released. The first Neon Sign Series with Chiptune arrangement." 
                     data-kr="'Matome (Ar ver.)' 발매. 네온사인 시리즈 제1탄 칩튠 어레인지.">
                     「まとめ (Ar ver.)」リリース。ネオンサインシリーズ第一弾はチップチューン・アレンジ
                 </h2>
 
-                <div class="body-text trans-text" 
-                   data-ja="シンガーソングライター・MIYUMIYUが贈るセルフアレンジ企画。アルゴンの輝きを音に閉じ込めた一曲。ピクセルアートの世界観と共に、懐かしくも新しいサウンドを楽しんでください。" 
-                   data-en="A self-arrangement project by MIYUMIYU. A track capturing the glow of Argon. Enjoy the nostalgic yet fresh sound with pixel art visuals." 
-                   data-kr="싱어송라이터 MIYUMIYU의 셀프 어레인지 프로젝트. 아르곤의 광채를 소리에 담아낸 곡. 픽셀 아트와 함께 즐겨주세요.">
-                   シンガーソングライター・MIYUMIYUが贈るセルフアレンジ企画。アルゴンの輝きを音に閉じ込めた一曲。ピクセルアートの世界観と共に、懐かしくも新しいサウンドを楽しんでください。
-                </div>
+                <p class="description trans-text" 
+                   data-ja="シンガーソングライター・MIYUMIYUが贈るセルフアレンジ企画。アルゴンの輝きを音に閉じ込めた一曲。懐かしさと新しさが同居するサウンドをぜひ体験してください。" 
+                   data-en="A self-arrangement project by singer-songwriter MIYUMIYU. A song that captures the glow of Argon. Experience the sound where nostalgia meets novelty." 
+                   data-kr="싱어송라이터 MIYUMIYU가 선사하는 셀프 어레인지 프로젝트. 아르곤의 광채를 소리에 담아낸 곡. 향수와 새로움이 공존하는 사운드를 경험해 보세요.">
+                   シンガーソングライター・MIYUMIYUが贈るセルフアレンジ企画。アルゴンの輝きを音に閉じ込めた一曲。懐かしさと新しさが同居するサウンドをぜひ体験してください。
+                </p>
 
-                <a href="https://linkco.re/rZbdVytZ?lang=ja" class="btn-primary trans-text" data-ja="楽曲を聴く (TuneCore)" data-en="Listen Now (TuneCore)" data-kr="음악 듣기 (TuneCore)">楽曲を聴く (TuneCore)</a>
+                <a href="#" class="btn-readmore trans-text" data-ja="続きを読む" data-en="Read More" data-kr="더 읽기">続きを読む</a>
             </div>
         </article>
 
@@ -75,11 +80,12 @@
 
     <script>
         function switchLang(lang) {
-            const elements = document.querySelectorAll('.trans-text, .badge, .section-title, .btn-primary');
+            const elements = document.querySelectorAll('.trans-text, .badge, .section-title, .btn-readmore');
             elements.forEach(el => {
                 const text = el.getAttribute(`data-${lang}`);
                 if (text) el.textContent = text;
             });
+
             document.querySelectorAll('.lang-selector button').forEach(btn => btn.classList.remove('active'));
             document.getElementById(`btn-${lang}`).classList.add('active');
         }
