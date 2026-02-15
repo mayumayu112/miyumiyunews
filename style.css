@@ -1,4 +1,3 @@
-/* Google Fonts から Noto Sans JP を読み込み */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
 
 body {
@@ -54,7 +53,6 @@ header {
     color: #000;
 }
 
-/* タイトルの枠線(title-box)を削除 */
 header h1 {
     font-size: 2.0rem;
     letter-spacing: 2px;
@@ -79,7 +77,23 @@ header h1 {
     padding: 25px 20px;
 }
 
-/* バッジの下に日付が配置されるよう変更 */
+/* YouTubeのレスポンシブ埋め込み設定 */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9比率 */
+    height: 0;
+    overflow: hidden;
+    margin: 30px 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .meta {
     display: flex;
     flex-direction: column;
@@ -123,9 +137,10 @@ h2.trans-text {
     text-decoration: underline;
 }
 
+/* DISCOGRAPHY 縦線をネオンカラー(#00f2ff)に変更 */
 .section-title {
     font-size: 1.1rem;
-    border-left: 5px solid #d32f2f;
+    border-left: 5px solid #00f2ff;
     padding-left: 15px;
     margin: 40px 20px 25px;
     font-weight: bold;
@@ -138,9 +153,52 @@ h2.trans-text {
     border-bottom: 1px solid #eee;
 }
 
+/* ジャケット写真と再生ボタンの重ね合わせ設定 */
+.jacket-link {
+    text-decoration: none;
+}
+
 .square-thumb {
-    width: 70px;
-    height: 70px;
+    width: 80px;
+    height: 80px;
     background: #f4f4f4;
     margin-right: 15px;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.square-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.play-overlay {
+    position: absolute;
+    color: #fff;
+    font-size: 1.5rem;
+    background: rgba(0, 0, 0, 0.4);
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    padding-left: 3px; /* 三角の位置調整 */
+    transition: background 0.3s;
+}
+
+.jacket-link:hover .play-overlay {
+    background: rgba(0, 242, 255, 0.7); /* ホバー時にネオンカラー */
+}
+
+.item-info h3 {
+    font-size: 1rem;
+    margin: 0;
+    color: #222;
 }
