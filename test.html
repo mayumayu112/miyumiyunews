@@ -91,10 +91,9 @@
     </main>
 
     <script>
-        // 翻訳用データ（本文の構造を維持するためJS側に保持）
         const translations = {
             en: {
-                desc: "<p>MIYUMIYU has launched 'Neon Sign Series,' a self-arrangement project reimagining her 1st single 'Matome.' The first installment, 'Matome - Ar ver.,' is now streaming.</p><p>Check out the music video on YouTube and visit the special site for streaming links:<br>🔗 <a href='https://link.miyutakeuchi.com/matome/ar' target='_blank'>link.miyutakeuchi.com/matome/ar</a></p>"
+                desc: "<p>MIYUMIYU has launched 'Neon Sign Series,' a project reimagining her 1st single 'Matome.' The first installment, 'Matome - Ar ver.,' is now streaming.</p><p>Check out the music video on YouTube and visit the special site for streaming links:<br>🔗 <a href='https://link.miyutakeuchi.com/matome/ar' target='_blank'>link.miyutakeuchi.com/matome/ar</a></p>"
             },
             kr: {
                 desc: "<p>MIYUMIYU가 첫 번째 싱글 'Matome'를 재구성하는 셀프 어레인지 프로젝트 〈네온사인 시리즈〉를 시작했습니다. 제1탄 'Matome - Ar ver.'가 공개되었습니다.</p><p>유튜브에서 뮤직비디오를 확인하고 특설 사이트에서 음원 링크를 만나보세요:<br>🔗 <a href='https://link.miyutakeuchi.com/matome/ar' target='_blank'>link.miyutakeuchi.com/matome/ar</a></p>"
@@ -102,17 +101,15 @@
         };
 
         function switchLang(lang) {
-            // 短いテキストの切り替え（innerHTMLを使うことでタイトルの<br>を反映）
             const elements = document.querySelectorAll('.trans-text, .badge, .section-title');
             elements.forEach(el => {
                 const text = el.getAttribute(`data-${lang}`);
-                if (text) el.innerHTML = text;
+                if (text) el.innerHTML = text; // 改行タグを反映させるためinnerHTMLに変更
             });
 
-            // 本文の切り替え
             const descEl = document.getElementById('main-description');
             if (lang === 'ja') {
-                location.reload(); // 日本語に戻す際は構造維持のためリロード
+                location.reload(); 
             } else if (translations[lang]) {
                 descEl.innerHTML = translations[lang].desc;
             }
