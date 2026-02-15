@@ -79,12 +79,13 @@ header h1 {
     padding: 25px 20px;
 }
 
+/* style.css の 93行目付近 */
 .meta {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px;
-    margin-bottom: 20px;
+    gap: 8px; /* ここの 8px がバッジと日付の間隔です */
+    margin-bottom: 12px; /* ← ここを 20px から 12px 程度に減らす */
 }
 
 .badge-argon {
@@ -106,7 +107,7 @@ header h1 {
 .news-title {
     font-size: 1.45rem; 
     line-height: 1.4;
-    margin: 0 0 25px 0;
+    margin: 0 0 25px 0; /* ← 1つ目の 0（上方向のmargin）を 0 に固定 */
     font-weight: 900;
     letter-spacing: -0.05em; 
     word-break: break-all;  
