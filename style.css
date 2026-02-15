@@ -1,8 +1,11 @@
-/* ベース設定 */
+/* Google Fonts から Noto Sans JP を読み込み */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
+
 body {
     margin: 0;
     padding: 0;
-    font-family: "Helvetica Neue", Arial, "Hiragino Sans", "Hiragino Kaku Gothic ProN", sans-serif;
+    /* フォントを Noto Sans JP に変更 */
+    font-family: 'Noto Sans JP', sans-serif;
     color: #222;
     background-color: #fff;
     line-height: 1.8;
@@ -14,7 +17,6 @@ body {
     margin: 0 auto;
 }
 
-/* ヘッダー：上下を詰めて0.5pxの激細ラインを設定 */
 header {
     background: #fff;
     border-bottom: 0.5px solid #000000;
@@ -26,7 +28,6 @@ header {
     text-align: center;
 }
 
-/* 言語選択：縦ライン(v-line)の設定 */
 .lang-selector {
     display: flex;
     justify-content: center;
@@ -54,23 +55,16 @@ header {
     color: #000;
 }
 
-/* タイトルを囲む黒い枠(1.5px) */
-.title-box {
-    border: 1.5px solid #000;
-    display: inline-block;
-    padding: 2px 20px;
-    margin: 0 auto;
-}
-
+/* 長方形(title-box)を削除 */
 header h1 {
-    font-size: 1.8rem;
+    font-size: 2.0rem;
     letter-spacing: 2px;
     margin: 0;
     line-height: 1.4;
-    font-weight: 800;
+    font-weight: 900;
+    text-align: center;
 }
 
-/* ニュース記事：余白の調整 */
 .new-release {
     margin-top: -5px;
     margin-bottom: 50px;
@@ -86,18 +80,20 @@ header h1 {
     padding: 25px 20px;
 }
 
-/* メタ情報：日付のスタイル */
+/* バッジの下に日付が配置されるよう設定 */
 .meta {
     display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 15px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    margin-bottom: 20px;
 }
 
 .release-date {
     font-size: 0.85rem;
-    color: #666;
+    color: #888;
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .badge-argon {
@@ -106,10 +102,11 @@ header h1 {
     padding: 2px 10px;
     font-size: 0.75rem;
     font-weight: bold;
+    display: inline-block;
 }
 
 h2.trans-text {
-    font-size: 1.5rem;
+    font-size: 1.6rem;
     line-height: 1.4;
     margin: 0 0 20px 0;
     font-weight: bold;
@@ -127,7 +124,6 @@ h2.trans-text {
     text-decoration: underline;
 }
 
-/* ディスコグラフィーセクション */
 .section-title {
     font-size: 1.1rem;
     border-left: 5px solid #d32f2f;
