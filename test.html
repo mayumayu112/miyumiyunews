@@ -1,49 +1,182 @@
-<header>
+<!DOCTYPE html>
+
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MIYUMIYU NEWS</title>
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+
+
+    <header>
+
         <div class="header-container">
+
             <div class="lang-selector">
+
                 <button onclick="switchLang('ja')" id="btn-ja" class="active">JP</button>
-                <div class="v-line"></div>
+
                 <button onclick="switchLang('en')" id="btn-en">EN</button>
-                <div class="v-line"></div>
+
                 <button onclick="switchLang('kr')" id="btn-kr">KR</button>
+
             </div>
 
-            <div class="title-box">
+                
+
                 <h1 id="site-title">MIYUMIYU NEWS</h1>
-            </div>
+
         </div>
+
     </header>
 
+
+
     <main class="container">
+
         <article class="new-release">
+
             <div class="main-visual">
+
                 <img src="matometomatome.png" alt="Main Visual">
+
             </div>
+
             
+
             <div class="content">
+
                 <div class="meta">
-                    <span class="badge badge-argon">NEW RELEASE</span>
-                    <span class="release-date">2026.02.15</span>
+
+                    <span class="badge badge-argon" data-ja="NEW RELEASE" data-en="NEW RELEASE" data-kr="신규 출시">NEW RELEASE</span>
+
                 </div>
+
                 
+
                 <h2 class="trans-text" 
+
                     data-ja="「まとめ (Ar ver.)」リリース。ネオンサインシリーズ第一弾はチップチューン・アレンジ" 
+
                     data-en="'Matome (Ar ver.)' Released. The first Neon Sign Series with Chiptune arrangement." 
+
                     data-kr="'Matome (Ar ver.)' 발매. 네온사인 시리즈 제1탄 칩튠 어레인지.">
+
                     「まとめ (Ar ver.)」リリース。ネオンサインシリーズ第一弾はチップチューン・アレンジ
+
                 </h2>
 
-                <div class="description trans-text">
-                    <p>MIYUMIYU が、1stシングル「まとめ」のセルフアレンジ企画〈ネオンサインシリーズ〉を始動。第一弾「まとめ - Ar ver.」が配信リリースされた。</p>
-                    <p>ネオンサインシリーズとは、ネオンに使用される（Ne、Ar、He、Kr、Xe）の光をテーマに、原曲をさまざまなアレンジにする。異なる表情へ変化させていく企画となっている。歌詞に登場する「ネオン」が今回の企画テーマ。</p>
-                    <p>原曲「まとめ」は、ピアノとボーカルのシンプルなサウンドで構成された、弾き語り曲。聴く人の心をストレートなサウンドで揺さぶり、原点的楽曲となっている。作詞・作曲・編曲・演奏・歌唱・MV制作までを本人が手がけている。</p>
-                    <p>今回の「Ar ver.」は、貴ガスの一員であるアルゴン（Ar）をコンセプトに制作。ゲーム風のチップチューンアレンジを施し、原曲のピアノボーカルの生感から打って変わり、デジタルな音作りとなっている。</p>
-                    <p>ミックスおよびマスタリングもMIYUMIYU自身が担当。ジャケットビジュアルも本人が制作し、前作「まとめ」のビジュアルをピクセルアート化。シリーズの世界観と楽曲イメージを象徴するデザインに仕上げている。ジャケットビジュアルも自ら制作し、前作「まとめ」のビジュアルをピクセルアートとして再構築している。</p>
-                    <p>原曲の楽曲制作時から"ネオン"がモチーフとなり制作された「まとめ」。歌詞にも度々登場し、楽曲の象徴となっている。「まとめ」の完成としては、本プロジェクト含めて全ての「まとめ」となっているのである。</p>
-                    <p>YouTubeでは同曲のミュージックビデオも公開中。</p>
-                    <p>まとめの配信リンクをまとめた特設サイトはこちら。<br>
-                    🔗 <a href="https://link.miyutakeuchi.com/matome/ar" target="_blank">link.miyutakeuchi.com/matome/ar</a></p>
-                    <p>シリーズの今後の展開にも注目だ。</p>
-                </div>
+
+
+                <p class="description trans-text" 
+
+                   data-ja="シンガーソングライター・MIYUMIYUが贈るセルフアレンジ企画。アルゴンの輝きを音に閉じ込めた一曲。懐かしさと新しさが同居するサウンドをぜひ体験してください。" 
+
+                   data-en="A self-arrangement project by singer-songwriter MIYUMIYU. A song that captures the glow of Argon. Experience the sound where nostalgia meets novelty." 
+
+                   data-kr="싱어송라이터 MIYUMIYU가 선사하는 셀프 어레인지 프로젝트. 아르곤의 광채를 소리에 담아낸 곡. 향수와 새로움이 공존하는 사운드를 경험해 보세요.">
+
+                   MIYUMIYU が、1stシングル「まとめ」のセルフアレンジ企画〈ネオンサインシリーズ〉を始動。
+第一弾「まとめ - Ar ver.」が配信リリースされた。
+
+ネオンサインシリーズとは、ネオンに使用される（Ne、Ar、He、Kr、Xe）の光をテーマに、原曲をさまざまなアレンジにする。異なる表情へ変化させていく企画となっている。
+歌詞に登場する「ネオン」が今回の企画テーマ。
+
+原曲「まとめ」は、ピアノとボーカルのシンプルなサウンドで構成された、弾き語り曲。聴く人の心をストレートなサウンドで揺さぶり、原点的楽曲となっている。
+作詞・作曲・編曲・演奏・歌唱・MV制作までを本人が手がけている。
+
+今回の「Ar ver.」は、貴ガスの一員であるアルゴン（Ar）をコンセプトに制作。ゲーム風のチップチューンアレンジを施し、原曲のピアノボーカルの生感から打って変わり、デジタルな音作りとなっている。
+
+ミックスおよびマスタリングもMIYUMIYU自身が担当。
+ジャケットビジュアルも本人が制作し、前作「まとめ」のビジュアルをピクセルアート化。シリーズの世界観と楽曲イメージを象徴するデザインに仕上げている。ジャケットビジュアルも自ら制作し、前作「まとめ」のビジュアルをピクセルアートとして再構築している。
+
+原曲の楽曲制作時から"ネオン"がモチーフとなり制作された「まとめ」。歌詞にも度々登場し、楽曲の象徴となっている。
+「まとめ」の完成としては、本プロジェクト含めて全ての「まとめ」となっているのである。
+
+YouTubeでは同曲のミュージックビデオも公開中。
+
+まとめの配信リンクをまとめた特設サイトはこちら。
+🔗 link.miyutakeuchi.com/matome/ar
+
+シリーズの今後の展開にも注目だ。
+
+
+                </p>
+
+                
+
             </div>
+
         </article>
+
+
+
+        <section class="list-section">
+
+            <h2 class="section-title" data-ja="DISCOGRAPHY" data-en="DISCOGRAPHY" data-kr="디스코그래피">DISCOGRAPHY</h2>
+
+            
+
+            <div class="list-item">
+
+                <div class="square-thumb">
+
+                    <img src="discography_a.png" alt="Song A" onerror="this.style.display='none'">
+
+                    <span>?</span>
+
+                </div>
+
+                <div class="item-info">
+
+                    <h3>楽曲名 A</h3>
+
+                    <p>2025.12.24 Release</p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <script>
+
+        function switchLang(lang) {
+
+            const elements = document.querySelectorAll('.trans-text, .badge, .section-title, .btn-readmore');
+
+            elements.forEach(el => {
+
+                const text = el.getAttribute(`data-${lang}`);
+
+                if (text) el.textContent = text;
+
+            });
+
+
+
+            document.querySelectorAll('.lang-selector button').forEach(btn => btn.classList.remove('active'));
+
+            document.getElementById(`btn-${lang}`).classList.add('active');
+
+        }
+
+    </script>
+
+</body>
+
+</html>
