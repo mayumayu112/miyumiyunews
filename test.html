@@ -34,8 +34,7 @@
                 </div>
                 
 　　<h2 id="main-title" class="trans-text news-title sm-break" 
-    data-ja="MIYUMIYU、「まとめ - Ar ver.」配信スタート<br>〈ネオンサインシリーズ〉第一弾" 
-    data-kr="MIYUMIYU, 'Matome - Ar ver.' 음원 공개<br>〈네온사인 시리즈〉 제1탄">
+    data-ja="MIYUMIYU、「まとめ - Ar ver.」配信スタート<br>〈ネオンサインシリーズ〉第一弾">
     MIYUMIYU「まとめ - Ar ver.」配信スタート！〈ネオンサインシリーズ〉第一弾
 </h2>
 
@@ -114,7 +113,18 @@
             `
         },
         kr: {
-            desc: "<p>MIYUMIYU가 첫 번째 싱글 'Matome'를 재구성하는 셀프 어레인지 프로젝트 〈네온사인 시리즈〉를 시작했습니다. 제1탄 'Matome - Ar ver.'가 공개되었습니다.</p><p>유튜브에서 뮤직비디오를 확인하고 특설 사이트에서 음원 링크를 만나보세요:<br>🔗 <a href='https://link.miyutakeuchi.com/matome/ar' target='_blank'>link.miyutakeuchi.com/matome/ar</a></p>"
+            title: "MIYUMIYU, ‘네온사인 시리즈’ 첫 시작",
+            subtitle: "「회고록 (回顧錄) - Ar ver.」 음원 공개",
+            desc: `
+                <p>아티스트 MIYUMIYU가 1집 싱글 「회고록 (回顧錄)」을 새롭게 재해석하는 셀프 어레인지 프로젝트 ‘네온사인 시리즈’를 시작했다. 그 첫 번째 트랙인 「회고록 (回顧錄) - Ar ver.」가 정식 발매되며 프로젝트의 포문을 열었다.</p>
+                <p>‘네온사인 시리즈’는 2024년 2월 발표된 「회고록 (回顧錄)」을 다양한 형태로 재구성하는 프로젝트다. 네온관에 사용되는 희귀가스(Ne / Ar / He / Kr / Xe)가 발산하는 빛을 콘셉트로, 한 곡을 서로 다른 사운드와 분위기로 확장해 나간다. 가사에 반복적으로 등장하는 ‘네온’이라는 이미지에서 출발한 기획이다.</p>
+                <p>원곡 「회고록 (回顧錄)」은 피아노와 보컬만으로 완성된 미니멀한 구성의 자작곡으로, 작사와 작곡은 물론 뮤직비디오 제작까지 MIYUMIYU가 직접 참여한 출발점 같은 작품이다. 이번 시리즈에서는 편곡, 믹싱, 마스터링까지 모두 스스로 맡으며 한층 확장된 프로듀싱 역량을 보여주고 있다.</p>
+                <p>첫 번째 버전인 「회고록 (回顧錄) - Ar ver.」은 기존의 피아노 중심 사운드에서 벗어나 디지털 텍스처가 강조된 사운드로 재탄생했다. 어딘가 레트로한 감성과 동시에 유희적인 분위기를 담아내며 또 다른 결의 ‘회고록’을 완성했다.</p>
+                <p>새롭게 공개된 재킷 이미지 역시 주목할 만하다. 전작의 비주얼을 픽셀 아트 스타일로 재해석해, 이번 버전의 디지털적 사운드 방향성을 시각적으로도 구현했다. ‘네온’을 모티프로 탄생한 「회고록 (回顧錄)」은 이번 프로젝트를 통해 그 세계관을 더욱 깊이 있게 확장해 나가고 있다.</p>
+                <p>해당 곡의 뮤직비디오는 현재 유튜브에서 확인할 수 있으며, 스트리밍 링크를 정리한 공식 페이지는 아래에서 확인 가능하다.<br>
+                ▶ <a href="https://link.miyutakeuchi.com/matome/ar" target="_blank">link.miyutakeuchi.com/matome/ar</a></p>
+                <p>‘네온사인 시리즈’가 앞으로 어떤 빛으로 이어질지, 관심이 집중되고 있다.</p>
+            `
         }
     };
 
@@ -128,19 +138,20 @@
             return;
         }
 
-        // 英語（EN）の場合：特別なタイトル・サブタイトル・小見出し付き本文を適用
-        if (lang === 'en') {
-            titleEl.innerHTML = `${translations.en.title}<br><span style="font-size: 1.1rem; font-weight: 400; display: block; margin-top: 10px; color: #666;">${translations.en.subtitle}</span>`;
-            descEl.innerHTML = translations.en.desc;
-        } else {
-            // 他の言語（韓国語など）：通常の切り替え
-            const elements = document.querySelectorAll('.trans-text, .badge, .section-title');
-            elements.forEach(el => {
-                const text = el.getAttribute(`data-${lang}`);
-                if (text) el.innerHTML = text;
-            });
-            if (translations[lang]) descEl.innerHTML = translations[lang].desc;
+        // 英語(EN)または韓国語(KR)の場合：タイトル・サブタイトル・本文を適用
+        if (translations[lang]) {
+            if (translations[lang].title && translations[lang].subtitle) {
+                titleEl.innerHTML = `${translations[lang].title}<br><span style="font-size: 1.1rem; font-weight: 400; display: block; margin-top: 10px; color: #666;">${translations[lang].subtitle}</span>`;
+            }
+            descEl.innerHTML = translations[lang].desc;
         }
+
+        // ディスコグラフィーなどの共通部分の切り替え
+        const elements = document.querySelectorAll('.trans-text, .badge, .section-title');
+        elements.forEach(el => {
+            const text = el.getAttribute(`data-${lang}`);
+            if (text) el.innerHTML = text;
+        });
 
         document.querySelectorAll('.lang-selector button').forEach(btn => btn.classList.remove('active'));
         document.getElementById(`btn-${lang}`).classList.add('active');
