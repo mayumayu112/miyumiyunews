@@ -18,7 +18,7 @@ body {
 /* ヘッダー */
 header {
     background: #fff;
-    border-bottom: 2px solid #d32f2f;
+    border-bottom: 0.5px solid #000000;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -61,10 +61,10 @@ header {
 }
 
 header h1 {
-    font-size: 1.6rem; /* 視認性をさらに向上 */
-    letter-spacing: 2px;
-    margin: 0;
-    font-weight: 800;
+    font-size: 2.2rem; /* サイズ拡大 */
+    letter-spacing: 1px;
+    margin: 0 auto;    /* 中央寄せ */
+    text-align: center; /* 中央寄せ */
 }
 
 /* ニュース記事（メイン） */
