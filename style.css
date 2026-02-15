@@ -1,4 +1,3 @@
-/* 1. フォント・共通 */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700;900&display=swap');
 
 body {
@@ -16,7 +15,6 @@ body {
     margin: 0 auto;
 }
 
-/* 2. ヘッダー */
 header {
     background: #fff;
     border-bottom: 0.5px solid #000000;
@@ -61,9 +59,9 @@ header h1 {
     margin: 0;
     line-height: 1.4;
     font-weight: 900;
+    text-align: center;
 }
 
-/* 3. ニュースコンテンツ */
 .new-release {
     margin-top: -5px;
     margin-bottom: 50px;
@@ -79,12 +77,36 @@ header h1 {
     padding: 25px 20px;
 }
 
+/* YouTubeのレスポンシブ埋め込み設定 */
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9比率 */
+    height: 0;
+    overflow: hidden;
+    margin: 30px 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
 .meta {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     gap: 8px;
     margin-bottom: 20px;
+}
+
+.release-date {
+    font-size: 0.85rem;
+    color: #888;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
 .badge-argon {
@@ -96,27 +118,11 @@ header h1 {
     display: inline-block;
 }
 
-.release-date {
-    font-size: 0.85rem;
-    color: #888;
+h2.trans-text {
+    font-size: 1.6rem;
+    line-height: 1.4;
+    margin: 0 0 20px 0;
     font-weight: bold;
-    letter-spacing: 1px;
-}
-
-/* 記事タイトル調整 */
-.news-title {
-    font-size: 1.5rem;
-    line-height: 1.5;
-    margin: 0 0 25px 0;
-    font-weight: 900;
-    letter-spacing: -0.2px;
-}
-
-@media (min-width: 768px) {
-    .news-title {
-        font-size: 2.2rem;
-        letter-spacing: 0.5px;
-    }
 }
 
 .description p {
@@ -131,26 +137,10 @@ header h1 {
     text-decoration: underline;
 }
 
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    margin: 30px 0;
-}
-
-.video-container iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* 4. ディスコグラフィー */
+/* DISCOGRAPHY 縦線をネオンカラー(#00f2ff)に変更 */
 .section-title {
     font-size: 1.1rem;
-    border-left: 5px solid #00f2ff; /* ネオンカラー */
+    border-left: 5px solid #00f2ff;
     padding-left: 15px;
     margin: 40px 20px 25px;
     font-weight: bold;
@@ -163,6 +153,7 @@ header h1 {
     border-bottom: 1px solid #eee;
 }
 
+/* ジャケット写真と再生ボタンの重ね合わせ設定 */
 .jacket-link {
     text-decoration: none;
 }
@@ -198,12 +189,12 @@ header h1 {
     align-items: center;
     border-radius: 50%;
     border: 2px solid #fff;
-    padding-left: 3px;
+    padding-left: 3px; /* 三角の位置調整 */
     transition: background 0.3s;
 }
 
 .jacket-link:hover .play-overlay {
-    background: rgba(0, 242, 255, 0.7);
+    background: rgba(0, 242, 255, 0.7); /* ホバー時にネオンカラー */
 }
 
 .item-info h3 {
