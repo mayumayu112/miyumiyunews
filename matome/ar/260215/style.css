@@ -84,8 +84,8 @@ header h1 {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    gap: 8px; /* ここの 8px がバッジと日付の間隔です */
-    margin-bottom: 12px; /* ← ここを 20px から 12px 程度に減らす */
+    gap: 8px;
+    margin-bottom: 5px;
 }
 
 .badge-argon {
