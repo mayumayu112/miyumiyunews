@@ -104,12 +104,12 @@ header h1 {
 }
 
 .news-title {
-    font-size: 1.45rem; /* 本文の端まで届くよう大きく調整 */
+    font-size: 1.45rem; 
     line-height: 1.4;
     margin: 0 0 25px 0;
     font-weight: 900;
-    letter-spacing: -0.05em; /* 文字間をしっかり詰めて1行の収容力を最大化 */
-    word-break: break-all;   /* 画面幅が極端に狭い場合でもはみ出しを防止 */
+    letter-spacing: -0.05em; 
+    word-break: break-all;  
 }
 
 @media (min-width: 768px) {
@@ -134,7 +134,7 @@ header h1 {
 /* 4. YouTubeレスポンシブ */
 .video-container {
     position: relative;
-    padding-bottom: 56.25%; /* 16:9比率 */
+    padding-bottom: 56.25%; 
     height: 0;
     overflow: hidden;
     margin: 30px 0;
