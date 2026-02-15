@@ -104,7 +104,7 @@
             const elements = document.querySelectorAll('.trans-text, .badge, .section-title');
             elements.forEach(el => {
                 const text = el.getAttribute(`data-${lang}`);
-                if (text) el.innerHTML = text; // 改行タグを反映させるためinnerHTMLに変更
+                if (text) el.innerHTML = text; // 改行タグ反映のためinnerHTMLを使用
             });
 
             const descEl = document.getElementById('main-description');
