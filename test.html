@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIYUMIYU NEWS</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <div class="lang-selector">
+            <button onclick="switchLang('ja')" id="btn-ja" class="active">JP</button>
+            <button onclick="switchLang('en')" id="btn-en">EN</button>
+            <button onclick="switchLang('kr')" id="btn-kr">KR</button>
+        </div>
+
+        <div class="header-top">
+            <div class="header-icon menu-icon">
+                <span></span><span></span><span></span>
+            </div>
+            <h1>MIYUMIYU NEWS</h1>
+            <div class="header-icon search-button">
+                <span class="search-symbol">Q</span>
+                <span class="search-label">SEARCH</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <article class="news-item">
+            <div class="main-visual">
+                <img src="matometomatome.png" alt="MIYUMIYU Neon Sign Series">
+            </div>
+            
+            <div class="content">
+                <div class="meta-info">
+                    <span class="badge badge-argon">NEW RELEASE</span>
+                    <span class="date">2026.02.14</span>
+                </div>
+                
+                <h2 class="trans-text" 
+                    data-ja="「まとめ (Ar ver.)」リリース。ネオンサインシリーズ第一弾はチップチューン・アレンジ" 
+                    data-en="'Matome (Ar ver.)' Released. Chiptune arrangement for Neon Sign Series Vol.1." 
+                    data-kr="'Matome (Ar ver.)' 발매. 네온사인 시리즈 제1탄 칩튠 어레인지.">
+                    「まとめ (Ar ver.)」リリース。ネオンサインシリーズ第一弾はチップチューン・アレンジ
+                </h2>
+
+                <div class="body-text trans-text" 
+                   data-ja="シンガーソングライター・MIYUMIYUが贈るセルフアレンジ企画。アルゴンの輝きを音に閉じ込めた一曲。ピクセルアートの世界観と共に、懐かしくも新しいサウンドを楽しんでください。" 
+                   data-en="A self-arrangement project by MIYUMIYU. A track capturing the glow of Argon. Enjoy the nostalgic yet fresh sound with pixel art visuals." 
+                   data-kr="싱어송라이터 MIYUMIYU의 셀프 어레인지 프로젝트. 아르곤의 광채를 소리에 담아낸 곡. 픽셀 아트와 함께 즐겨주세요.">
+                   シンガーソングライター・MIYUMIYUが贈るセルフアレンジ企画。アルゴンの輝きを音に閉じ込めた一曲。ピクセルアートの世界観と共に、懐かしくも新しいサウンドを楽しんでください。
+                </div>
+
+                <a href="https://linkco.re/rZbdVytZ?lang=ja" class="btn-primary trans-text" data-ja="楽曲を聴く (TuneCore)" data-en="Listen Now (TuneCore)" data-kr="음악 듣기 (TuneCore)">楽曲を聴く (TuneCore)</a>
+            </div>
+        </article>
+
+        <section class="list-section">
+            <h2 class="section-title" data-ja="DISCOGRAPHY" data-en="DISCOGRAPHY" data-kr="디스코그래피">DISCOGRAPHY</h2>
+            
+            <div class="list-item">
+                <div class="square-thumb">
+                    <img src="discography_a.png" alt="Song A" onerror="this.style.display='none'">
+                    <span>?</span>
+                </div>
+                <div class="item-info">
+                    <h3>楽曲名 A</h3>
+                    <p>2025.12.24 Release</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function switchLang(lang) {
+            const elements = document.querySelectorAll('.trans-text, .badge, .section-title, .btn-primary');
+            elements.forEach(el => {
+                const text = el.getAttribute(`data-${lang}`);
+                if (text) el.textContent = text;
+            });
+            document.querySelectorAll('.lang-selector button').forEach(btn => btn.classList.remove('active'));
+            document.getElementById(`btn-${lang}`).classList.add('active');
+        }
+    </script>
+</body>
+</html>
