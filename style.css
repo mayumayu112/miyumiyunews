@@ -103,13 +103,13 @@ header h1 {
     letter-spacing: 1px;
 }
 
-/* 記事タイトルのデザイン（スマホ・PC切り替え） */
 .news-title {
-    font-size: 1.4rem; /* スマホ用サイズ */
-    line-height: 1.5;
+    font-size: 1.25rem; /* スマホで1行がはみ出さないよう微調整 */
+    line-height: 1.6;   /* 2行になった時の行間を少し広げて読みやすく */
     margin: 0 0 25px 0;
     font-weight: 900;
-    letter-spacing: -0.2px;
+    letter-spacing: -0.02em; /* 文字間を詰め、収まりを良くする */
+    word-break: keep-all;    /* 単語の途中で変に改行されないようにする */
 }
 
 @media (min-width: 768px) {
