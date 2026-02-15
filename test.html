@@ -1,7 +1,3 @@
-
-
-
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
@@ -95,9 +91,10 @@
     </main>
 
     <script>
+        // 翻訳用データ（本文の構造を維持するためJS側に保持）
         const translations = {
             en: {
-                desc: "<p>MIYUMIYU has launched 'Neon Sign Series,' a project reimagining her 1st single 'Matome.' The first installment, 'Matome - Ar ver.,' is now streaming.</p><p>Check out the music video on YouTube and visit the special site for streaming links:<br>🔗 <a href='https://link.miyutakeuchi.com/matome/ar' target='_blank'>link.miyutakeuchi.com/matome/ar</a></p>"
+                desc: "<p>MIYUMIYU has launched 'Neon Sign Series,' a self-arrangement project reimagining her 1st single 'Matome.' The first installment, 'Matome - Ar ver.,' is now streaming.</p><p>Check out the music video on YouTube and visit the special site for streaming links:<br>🔗 <a href='https://link.miyutakeuchi.com/matome/ar' target='_blank'>link.miyutakeuchi.com/matome/ar</a></p>"
             },
             kr: {
                 desc: "<p>MIYUMIYU가 첫 번째 싱글 'Matome'를 재구성하는 셀프 어레인지 프로젝트 〈네온사인 시리즈〉를 시작했습니다. 제1탄 'Matome - Ar ver.'가 공개되었습니다.</p><p>유튜브에서 뮤직비디오를 확인하고 특설 사이트에서 음원 링크를 만나보세요:<br>🔗 <a href='https://link.miyutakeuchi.com/matome/ar' target='_blank'>link.miyutakeuchi.com/matome/ar</a></p>"
@@ -105,137 +102,17 @@
         };
 
         function switchLang(lang) {
+            // 短いテキストの切り替え（innerHTMLを使うことでタイトルの<br>を反映）
             const elements = document.querySelectorAll('.trans-text, .badge, .section-title');
             elements.forEach(el => {
                 const text = el.getAttribute(`data-${lang}`);
-                if (text) el.innerHTML = text; // 改行タグを反映させるためinnerHTMLに変更
+                if (text) el.innerHTML = text;
             });
 
+            // 本文の切り替え
             const descEl = document.getElementById('main-description');
             if (lang === 'ja') {
-                location.reload(); 
-            } else if (translations[lang]) {
-                descEl.innerHTML = translations[lang].desc;
-            }
-
-            document.querySelectorAll('.lang-selector button').forEach(btn => btn.classList.remove('active'));
-            document.getElementById(`btn-${lang}`).classList.add('active');
-        }
-    </script>
-</body>
-</html>
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MIYUMIYU NEWS</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-
-    <header>
-        <div class="header-container">
-            <div class="lang-selector">
-                <button onclick="switchLang('ja')" id="btn-ja" class="active">JP</button>
-                <div class="v-line"></div>
-                <button onclick="switchLang('en')" id="btn-en">EN</button>
-                <div class="v-line"></div>
-                <button onclick="switchLang('kr')" id="btn-kr">KR</button>
-            </div>
-            <h1 id="site-title">MIYUMIYU NEWS</h1>
-        </div>
-    </header>
-
-    <main class="container">
-        <article class="new-release">
-            <div class="main-visual">
-                <img src="matometomatome.png" alt="Main Visual">
-            </div>
-            
-            <div class="content">
-                <div class="meta">
-                    <span class="badge badge-argon">NEW RELEASE</span>
-                    <span class="release-date">2026.02.15</span>
-                </div>
-                
-                <h2 class="trans-text news-title" 
-                    data-ja="MIYUMIYU、〈ネオンサインシリーズ〉第一弾<br>「まとめ - Ar ver.」配信スタート" 
-                    data-en="MIYUMIYU Starts 'Neon Sign Series' Vol.1<br>'Matome - Ar ver.' Now Streaming" 
-                    data-kr="MIYUMIYU, 〈네온사인 시리즈〉 제1탄<br>'Matome - Ar ver.' 음원 공개">
-                    MIYUMIYU、〈ネオンサインシリーズ〉第一弾<br>「まとめ - Ar ver.」配信スタート
-                </h2>
-
-                <div id="main-description" class="description">
-                    <p>MIYUMIYU が、1stシングル「まとめ」のセルフアレンジ企画〈ネオンサインシリーズ〉をスタート。第一弾「まとめ - Ar ver.」を配信リリースした。</p>
-
-                    <p>〈ネオンサインシリーズ〉は、2024年2月にリリースされた1stシングル「まとめ」をMIYUMIYU自ら編曲する企画。ネオン管に使用される貴ガス（Ne / Ar / He / Kr / Xe）の光をテーマに、楽曲をさまざまなアレンジへと展開していく。歌詞に登場する“ネオン”を着想源としたプロジェクトだ。</p>
-
-                    <div class="video-container">
-                        <iframe width="560" height="315" src="https://www.youtube.com/embed/QZkV3Tyo0II" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                    </div>
-
-                    <p>原曲「まとめ」は、ピアノとボーカルのみで構成されたシンプルな弾き語り楽曲。作詞・作曲・MV制作を本人が手がけた原点的な一曲。今回はそれらに加え、編曲・ミックス・マスタリングまで自身が担当している。</p>
-
-                    <p>第一弾「まとめ - Ar ver.」は、ピアノボーカルサウンドから一転、デジタルな音像へと再構築。どこか懐かしく、遊び心あふれる作品に仕上がっている。また、ジャケットビジュアルも新たに制作。前作のビジュアルをピクセルアート化し、音作りを視覚面からも表現している。</p>
-
-                    <p>原曲制作時から“ネオン”をモチーフとして生まれた「まとめ」。本プロジェクトは、そのテーマをさらに深化させる試みといえる。YouTubeでは同曲のミュージックビデオも公開中。配信リンクをまとめた特設サイトはこちら。<br>
-                    🔗 <a href="https://link.miyutakeuchi.com/matome/ar" target="_blank">link.miyutakeuchi.com/matome/ar</a></p>
-
-                    <p>シリーズの今後の展開にも注目だ。</p>
-                </div>
-            </div>
-        </article>
-
-        <section class="list-section">
-            <h2 class="section-title" data-ja="DISCOGRAPHY" data-en="DISCOGRAPHY" data-kr="디스코그래피">DISCOGRAPHY</h2>
-            
-            <div class="list-item">
-                <a href="https://link.miyutakeuchi.com/matome/ar/" target="_blank" class="jacket-link">
-                    <div class="square-thumb">
-                        <img src="matomeAr_jacket.jpg" alt="まとめ - Ar ver.">
-                        <div class="play-overlay">▶</div>
-                    </div>
-                </a>
-                <div class="item-info">
-                    <h3>まとめ - Ar ver.</h3>
-                </div>
-            </div>
-
-            <div class="list-item">
-                <a href="https://linkco.re/P1F77eSg?lang=ja" target="_blank" class="jacket-link">
-                    <div class="square-thumb">
-                        <img src="matome_jacket.JPG" alt="まとめ">
-                        <div class="play-overlay">▶</div>
-                    </div>
-                </a>
-                <div class="item-info">
-                    <h3>まとめ</h3>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <script>
-        const translations = {
-            en: {
-                desc: "<p>MIYUMIYU has launched 'Neon Sign Series,' a project reimagining her 1st single 'Matome.' The first installment, 'Matome - Ar ver.,' is now streaming.</p><p>Check out the music video on YouTube and visit the special site for streaming links:<br>🔗 <a href='https://link.miyutakeuchi.com/matome/ar' target='_blank'>link.miyutakeuchi.com/matome/ar</a></p>"
-            },
-            kr: {
-                desc: "<p>MIYUMIYU가 첫 번째 싱글 'Matome'를 재구성하는 셀프 어레인지 프로젝트 〈네온사인 시리즈〉를 시작했습니다. 제1탄 'Matome - Ar ver.'가 공개되었습니다.</p><p>유튜브에서 뮤직비디오를 확인하고 특설 사이트에서 음원 링크를 만나보세요:<br>🔗 <a href='https://link.miyutakeuchi.com/matome/ar' target='_blank'>link.miyutakeuchi.com/matome/ar</a></p>"
-            }
-        };
-
-        function switchLang(lang) {
-            const elements = document.querySelectorAll('.trans-text, .badge, .section-title');
-            elements.forEach(el => {
-                const text = el.getAttribute(`data-${lang}`);
-                if (text) el.innerHTML = text; // 改行タグを反映させるためinnerHTMLに変更
-            });
-
-            const descEl = document.getElementById('main-description');
-            if (lang === 'ja') {
-                location.reload(); 
+                location.reload(); // 日本語に戻す際は構造維持のためリロード
             } else if (translations[lang]) {
                 descEl.innerHTML = translations[lang].desc;
             }
