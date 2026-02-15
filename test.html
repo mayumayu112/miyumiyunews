@@ -90,7 +90,7 @@
         </section>
     </main>
 
-    <script>
+<script>
     const translations = {
         en: {
             title: "MIYUMIYU Launches “Neon Sign Series” with Digital Rework",
@@ -100,12 +100,12 @@
                 <p>Originally released in February 2024, Memoir (回顧録) began as a minimalist piano-and-vocal piece—an intimate ballad that marked a defining moment in MIYUMIYU’s solo artistic identity. Written, composed, and visually directed by the artist herself, the song introduced listeners to her stripped-down and emotionally transparent sound.</p>
                 <p>The newly announced Neon Sign Series takes that foundational work and reconstructs it through multiple sonic interpretations inspired by noble gases used in neon lighting — Neon (Ne), Argon (Ar), Helium (He), Krypton (Kr), and Xenon (Xe). The “neon” motif, which appears in the original lyrics, now becomes the conceptual backbone of an evolving musical universe.</p>
 
-                <h3 style="font-size: 1.2rem; margin-top: 30px; font-weight: 900;">From Acoustic Intimacy to Digital Glow</h3>
+                <h3 style="font-size: 1.2rem; margin-top: 30px; font-weight: 900; border-left: none; padding-left: 0;">From Acoustic Intimacy to Digital Glow</h3>
                 <p>While the original version of Memoir (回顧録) centered on raw piano expression, “Memoir (回顧録) – Ar ver.” shifts dramatically toward a digital soundscape. The arrangement embraces electronic textures and playful tonal design, creating a sound that feels both nostalgic and futuristically vibrant.</p>
                 <p>In a rare move for an independent artist, MIYUMIYU personally handled not only the songwriting and performance but also the arrangement, mixing, and mastering, further solidifying her reputation as a self-contained creative force.</p>
                 <p>The visual direction reflects this shift as well. The artwork for Ar ver. reinterprets the previous cover into pixel art form — a deliberate aesthetic choice that mirrors the track’s digital reconstruction.</p>
                 
-                <h3 style="font-size: 1.2rem; margin-top: 30px; font-weight: 900;">A Thematic Expansion</h3>
+                <h3 style="font-size: 1.2rem; margin-top: 30px; font-weight: 900; border-left: none; padding-left: 0;">A Thematic Expansion</h3>
                 <p>What began as a simple piano confession has now evolved into a multi-dimensional artistic experiment. If the original Memoir (回顧録) was the emotional core, the Neon Sign Series represents its illumination — refracted through different lights, colors, and textures.</p>
                 <p>The official music video for Memoir (回顧録) – Ar ver. is now available on YouTube.</p>
                 <p>Streaming links and related content can be found via the project’s dedicated page:<br>
@@ -114,7 +114,7 @@
             `
         },
         kr: {
-            desc: `<p>MIYUMIYU가 첫 번째 싱글 'Matome'를 재구성하는 셀프 어レ인지 프로젝트 〈네온사인 시리즈〉를 시작했습니다. 제1탄 'Matome - Ar ver.'가 공개되었습니다.</p><p>유튜브에서 뮤직비디오를 확인하고 특설 사이트에서 음원 링크를 만나보세요:<br>🔗 <a href='https://link.miyutakeuchi.com/matome/ar' target='_blank'>link.miyutakeuchi.com/matome/ar</a></p>`
+            desc: "<p>MIYUMIYU가 첫 번째 싱글 'Matome'를 재구성하는 셀프 어레인지 프로젝트 〈네온사인 시리즈〉를 시작했습니다. 제1탄 'Matome - Ar ver.'가 공개되었습니다.</p><p>유튜브에서 뮤직비디오를 확인하고 특설 사이트에서 음원 링크를 만나보세요:<br>🔗 <a href='https://link.miyutakeuchi.com/matome/ar' target='_blank'>link.miyutakeuchi.com/matome/ar</a></p>"
         }
     };
 
@@ -124,16 +124,16 @@
 
         // 日本語に戻す
         if (lang === 'ja') {
-            location.reload();
+            location.reload(); 
             return;
         }
 
-        // 英語の場合のみタイトルとサブタイトルの特別構造を適用
+        // 英語（EN）の場合：特別なタイトル・サブタイトル・小見出し付き本文を適用
         if (lang === 'en') {
             titleEl.innerHTML = `${translations.en.title}<br><span style="font-size: 1.1rem; font-weight: 400; display: block; margin-top: 10px; color: #666;">${translations.en.subtitle}</span>`;
             descEl.innerHTML = translations.en.desc;
         } else {
-            // 他の言語（韓国語など）
+            // 他の言語（韓国語など）：通常の切り替え
             const elements = document.querySelectorAll('.trans-text, .badge, .section-title');
             elements.forEach(el => {
                 const text = el.getAttribute(`data-${lang}`);
