@@ -16,7 +16,6 @@ body {
     margin: 0 auto;
 }
 
-/* 2. ヘッダー */
 header {
     background: #fff;
     border-bottom: 0.5px solid #000000;
@@ -63,7 +62,6 @@ header h1 {
     font-weight: 900;
 }
 
-/* 3. ニュースコンテンツ */
 .new-release {
     margin-top: -5px;
     margin-bottom: 50px;
@@ -79,7 +77,6 @@ header h1 {
     padding: 25px 20px;
 }
 
-/* style.css の 93行目付近 */
 .meta {
     display: flex;
     flex-direction: column;
@@ -89,7 +86,7 @@ header h1 {
 }
 
 .badge-argon {
-    background-color: #00f2ff;
+    background-color: #FF4500;
     color: #000;
     padding: 2px 10px;
     font-size: 0.75rem;
@@ -107,7 +104,7 @@ header h1 {
 .news-title {
     font-size: 1.45rem; 
     line-height: 1.4;
-    margin: 0 0 25px 0; /* ← 1つ目の 0（上方向のmargin）を 0 に固定 */
+    margin: 0 0 25px 0; 
     font-weight: 900;
     letter-spacing: -0.05em; 
     word-break: break-all;  
@@ -132,7 +129,6 @@ header h1 {
     text-decoration: underline;
 }
 
-/* 4. YouTubeレスポンシブ */
 .video-container {
     position: relative;
     padding-bottom: 56.25%; 
@@ -149,10 +145,9 @@ header h1 {
     height: 100%;
 }
 
-/* 5. ディスコグラフィー */
 .section-title {
     font-size: 1.1rem;
-    border-left: 5px solid #00f2ff; /* ネオンカラー */
+    border-left: 5px solid #FF4500;
     padding-left: 15px;
     margin: 40px 20px 25px;
     font-weight: bold;
